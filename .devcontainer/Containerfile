@@ -1,0 +1,22 @@
+FROM fedora:41
+
+RUN sudo dnf clean all -y \
+    && sudo dnf update -y \
+    # && sudo dnf install -y clang llvm lld \
+    && sudo dnf install -y nodejs npm \
+    # && sudo dnf install -y rustup \
+    && sudo dnf install -y bat eza fish fzf git just ripgrep unzip util-linux-user
+
+RUN sudo dnf copr enable -y fz0x1/zola \
+    && sudo dnf install -y zola
+
+ARG USER=dev
+ARG UID=1000
+
+RUN groupadd -g ${UID} ${USER} \
+    && useradd -m -u ${UID} -g ${USER} ${USER} -s /usr/bin/fish \
+    && echo "${USER} ALL=(root) NOPASSWD: ALL" > /etc/sudoers.d/${USER} \
+    && chmod 0440 /etc/sudoers.d/${USER} \
+    && chown -R ${USER}:${USER} /home/${USER} 
+
+USER ${USER}

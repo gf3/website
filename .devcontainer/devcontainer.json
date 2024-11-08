@@ -1,0 +1,54 @@
+{
+	"name": "Zola",
+	"build": {
+		"dockerfile": "Containerfile",
+		"args": {
+			"USER_UID": "1000",
+			"USER_GID": "1000"
+		}
+	},
+	"runArgs": [
+		// Workspace folder
+		"--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"
+	],
+	"workspaceMount": "",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
+	},
+	"containerEnv": {
+		"HOME": "/home/dev"
+	},
+	"containerUser": "dev",
+	"remoteUser": "dev",
+	"updateRemoteUserUID": true,
+	"customizations": {
+		"settings": {
+			"remote.containers.copyGitConfig": true
+		},
+		"vscode": {
+			"extensions": [
+				"DavidAnson.vscode-markdownlint",
+				"eamodio.gitlens",
+				"ecmel.vscode-html-css",
+				"eduarbo.relative-file-navigator",
+				"esbenp.prettier-vscode",
+				"github.vscode-github-actions",
+				"github.vscode-pull-request-github",
+				"karunamurti.tera",
+				"ms-azuretools.vscode-docker",
+				"ow.vscode-subword-navigation",
+				"Syler.sass-indented",
+				"tamasfe.even-better-toml"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "fish",
+				"terminal.integrated.profiles.linux": {
+					"fish": {
+						"path": "/usr/bin/fish"
+					}
+				}
+			}
+		}
+	}
+}

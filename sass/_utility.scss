@@ -1,0 +1,41 @@
+.screen-reader {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.highlight {
+  display: inline-block;
+  position: relative;
+  padding: 0 var(--size-1);
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--size-1) * -1);
+    right: calc(var(--size-1) * -1);
+    background: var(--gradient-20);
+    transform: skew(-5deg);
+    z-index: -1;
+  }
+
+  p & {
+    padding: 0 var(--size-0);
+    margin: 0 var(--size-1);
+  }
+}
+
+.underline {
+  border-bottom: var(--text-1) var(--border-size-1) solid;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}

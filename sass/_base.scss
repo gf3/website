@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Rubik";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  src: url("/fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  src: url("/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-feature-settings: "zero", "ss01", "cv11";
+  font-variation-settings: "opsz" 14;
+  font-weight: 350;
+
+  --alternate-surface-1: var(--gray-9);
+  --alternate-surface-2: #ffffff;
+
+  --x-border: var(--gray-3);
+  --x-color: var(--gray-8);
+  --x-background: var(--gray-1);
+
+  --primary-color: var(--blue-6);
+  --primary-background: var(--blue-1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --alternate-surface-1: var(--gray-10);
+    --alternate-surface-2: var(--gray-10);
+
+    --x-border: var(--gray-7);
+    --x-color: var(--gray-4);
+    --x-background: var(--gray-8);
+
+    --primary-color: var(--blue-1);
+    --primary-background: var(--blue-8);
+  }
+}

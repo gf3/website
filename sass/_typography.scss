@@ -1,0 +1,34 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-5);
+  text-align: center;
+}
+
+h2 {
+  margin: var(--size-6) 0 var(--size-4);
+  font-size: var(--font-size-fluid-2);
+}
+
+h3 {
+  margin: var(--size-2) 0 var(--size-1);
+  font-size: var(--font-size-fluid-1);
+}
+
+@media (min-width: 1024px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: left;
+  }
+}
+
+p {
+  margin-bottom: var(--size-2);
+}
